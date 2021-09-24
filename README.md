@@ -3,8 +3,6 @@
 
 ![](/Pics/PainterIBAI.png)
 
-_Powered by_
-
 ✨Idan Buller✨
 
 ✨Avichai Iluz✨
