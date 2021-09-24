@@ -1,6 +1,7 @@
 # PainterIBAI
 ## _Painter Application, C++ Object Oriented Programming, HIT_
 
+![](/Pics/PainterIBAI.png)
 
 Powered by:
 ✨Idan Buller✨
