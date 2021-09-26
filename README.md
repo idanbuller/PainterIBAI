@@ -17,6 +17,7 @@
 - Redo paint
 - Save paint into file
 - Load paint from file
+- Polymorphism as presented in theCclass Diagram below:
 
 ![](/Pics/ClassDiagram.png)
 
