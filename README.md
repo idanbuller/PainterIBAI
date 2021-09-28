@@ -227,7 +227,7 @@ void CPainterIBAIDlg::OnBnClickedButton4() // Redo Btn
 ```
 
 #### OnBnClickedButton5
-Clear akk button
+Clear all button
 ```C++
 void CPainterIBAIDlg::OnBnClickedButton5() // Clear All Btn
 {
