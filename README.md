@@ -238,3 +238,78 @@ void CPainterIBAIDlg::OnBnClickedButton5() // Clear All Btn
 	Invalidate();
 }
 ```
+
+# Line Drawing Tutorial
+
+![](/Pics/LineTutorial.png)
+
+> When we click the mouse inside the PainterIBAI console the function PainteIBAI::OnLButtonDown is executing.
+This function gets point (X, Y) as a parameter, which reffers to the mouse place inside the PainterIBAI console,
+and save it in startP and endP variables.
+In addition, the function signes the mouse as signed in the class variable called isPressed. Then, the function
+PainteIBAI::OnLButtonDown calls the Invalidate() function, which responsible for the deletion of the previous console.
+For example, when we are drawing a line inside the console and trying to add one more drawing, Invalidate() makes
+the previous line to disappear.
+
+> Invalidate() also creating a ON_PAINT event which calls the PainteIBAI::OnPaint function to draw a line from the start to
+the end (startP -> endP).
+
+> On every move of the mouse the function PainteIBAI::OnMouseMove is checking if the mouse is pressed (isPressed). If so, the function is changing the value of endP and and calls the Invalidate() finction to delete the previous line.
+
+> On every release of the mouse the function PainteIBAI::OnLButtonUp is executing the checks is the nouse is presses (idPresses) and changing the value of endP.
+
+## Background
+_The following is a simple method to add a Line figure into our MFC project._
+- **Step 1** - At the beginning of the execution the project pops up empty and then the user is able to draw the line.
+- **Step 2** - Head to the header file PainterIBAIDlg.h and add the following:
+``` C++
+// protected:
+afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+// public:
+afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+```
+- **step 3** - Head to the PainterIBAIDlg.cpp and add the following:
+```C++
+// into the BEGIN_MESSAGE_MAP
+ON_WM_LBUTTONDOWN()
+ON_WM_LBUTTONUP()
+ON_WM_MOUSEMOVE()
+
+//into void PainterIBAIDlg::OnPaint()
+void PainterIBAIDlg::OnPaint()
+{
+    CPaintDC dc(this);
+    dc.MoveTo(startP);
+    dc.LineTo(endP.x, endP.y);
+}
+```
+- **Step 4** - Add the buttons code to the end of the PainterIBAIDlg.cpp
+```C++
+void PainterIBAIDlg::OnLButtonDown(UINT nFlags, CPoint point)
+{
+    endP = startP = point;
+    isPressed = true;
+    Invalidate();
+    CDialog::OnLButtonDown(nFlags, point);
+}
+void PainterIBAIDlg::OnLButtonUp(UINT nFlags, CPoint point)
+{
+    if (isPressed)
+    {
+        endP = point;
+        isPressed = false;
+        Invalidate();
+    }
+    CDialog::OnLButtonUp(nFlags, point);
+}
+void PainterIBAIDlg::OnMouseMove(UINT nFlags, CPoint point)
+{
+    if (isPressed)
+    {
+        endP = point;
+        Invalidate();
+    }
+    CDialog::OnMouseMove(nFlags, point);
+}
+```
