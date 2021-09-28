@@ -255,7 +255,7 @@ the end (startP -> endP).
 
 > On every move of the mouse the function PainteIBAI::OnMouseMove is checking if the mouse is pressed (isPressed). If so, the function is changing the value of endP and and calls the Invalidate() finction to delete the previous line.
 
-> On every release of the mouse the function PainteIBAI::OnLButtonUp is executing the checks is the nouse is presses (idPresses) and changing the value of endP.
+> On every release of the mouse the function PainteIBAI::OnLButtonUp is executing the checks is the nouse is presses (iדPresses) and changing the value of endP.
 
 ## Background
 _The following is a simple method to add a Line figure into our MFC project._
