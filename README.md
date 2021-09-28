@@ -240,7 +240,6 @@ void CPainterIBAIDlg::OnBnClickedButton5() // Clear All Btn
 ```
 
 # Line Drawing Tutorial
-
 ![](/Pics/LineTutorial.PNG)
 
 > When we click the mouse inside the PainterIBAI console the function PainteIBAI::OnLButtonDown is executing.
