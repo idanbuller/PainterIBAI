@@ -17,7 +17,7 @@
 - Redo paint
 - Save paint into file
 - Load paint from file
-- Polymorphism as presented in theCclass Diagram below:
+- Polymorphism as presented in the Class Diagram below:
 
 ![](/Pics/ClassDiagram.png)
 
@@ -30,8 +30,8 @@ PainterIBAI uses a number of classes based on the polymorphism principals :
 - **Line** - Inherits from Figure, Creates CDC object and a Draw function.
 - **Rectangle** - Inherits from Figure and Creates CDC object.
 - **Ellipse** - Inherits from Figure, Creates CDC object and a Draw function.
-- **Circle** - 
-- **Square** - 
+- **Circle** - Inherits from Ellipse, Creates CDC object and a Draw function.
+- **Square** - Inherits from Rectangle, Creates CDC object and a Draw function.
 
 
 ## PainterIBAIDlg.cpp - Main Functions
@@ -67,8 +67,8 @@ except for the last figure. Therefor the user can undo only the last figure crea
 MFC contains multiple classes we used in order to create the objects and the painting abillity.
 | Class | Description |
 | ------ | ------ |
-| Serialization | Future TASK |
-| Invalidate | Future TASK |
+| Serialization | Serialization is the process of writing or reading an object to or from a persistent storage medium such as a disk file. Serialization is ideal for situations where it is desired to maintain the state of structured data (such as C++ classes or structures) during or after the execution of a program. |
+| Invalidate | The client area is marked for painting when the next WM_PAINT message occurs. The region can also be validated before a WM_PAINT message occurs by the ValidateRect or ValidateRgn member function. |
 
 ## MFC Important Classes
 MFC contains multiple classes we used in order to create the objects and the painting abillity.
