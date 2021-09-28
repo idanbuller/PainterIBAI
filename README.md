@@ -241,7 +241,7 @@ void CPainterIBAIDlg::OnBnClickedButton5() // Clear All Btn
 
 # Line Drawing Tutorial
 
-![](/Pics/LineTutorial.png)
+![](/Pics/LineTutorial.PNG)
 
 > When we click the mouse inside the PainterIBAI console the function PainteIBAI::OnLButtonDown is executing.
 This function gets point (X, Y) as a parameter, which reffers to the mouse place inside the PainterIBAI console,
